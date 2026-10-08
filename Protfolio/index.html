@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harsha MR | Computer Science Student & Developer</title>
+<meta name="description" content="Portfolio of Harsha MR, a CSE student at Malnad College of Engineering building software and AI/ML projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b1a; --bg2:#0d1330; --text:#e8ecff; --muted:#9aa4cc;
+  --blue:#4f8cff; --purple:#9b6bff; --line:rgba(160,175,255,.16);
+  --glass:rgba(255,255,255,.05);
+  --grad:linear-gradient(135deg,var(--blue),var(--purple));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;
+  background-image:radial-gradient(600px 400px at 85% -5%,rgba(155,107,255,.22),transparent),radial-gradient(600px 400px at 0% 20%,rgba(79,140,255,.18),transparent);
+  background-attachment:fixed}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:10px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:36px}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,26,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:"Space Grotesk";font-weight:700;letter-spacing:.04em}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
+@media(max-width:760px){nav ul{gap:12px;font-size:.8rem;overflow-x:auto;white-space:nowrap;max-width:68vw;scrollbar-width:none}}
+
+/* hero */
+.hero{min-height:88vh;display:flex;align-items:center;padding:60px 0}
+.hero h1{font-size:clamp(2.6rem,8vw,5rem);letter-spacing:-.02em}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{color:var(--muted);margin:14px 0 8px;font-size:1.05rem}
+.tag{font-family:"Space Grotesk";font-size:1.25rem;margin-bottom:28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 22px;border-radius:999px;border:1px solid var(--line);background:var(--glass);font-weight:500;font-size:.95rem;transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--blue)}
+.btn.primary{background:var(--grad);border-color:transparent;color:#fff}
+.type{display:inline-block;overflow:hidden;white-space:nowrap;border-right:2px solid var(--purple);animation:typing 1.6s steps(22) .3s both,blink .8s step-end infinite}
+@keyframes typing{from{width:0}to{width:22ch}}
+@keyframes blink{50%{border-color:transparent}}
+
+/* about */
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.about p+p{margin-top:14px}
+.facts{padding:22px;display:grid;gap:16px}
+.facts b{display:block;font-family:"Space Grotesk";font-size:1.7rem}
+.facts span{color:var(--muted);font-size:.9rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skills .glass{padding:22px}
+.skills h3{font-size:1.05rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:5px 12px;border-radius:999px;font-size:.85rem;border:1px solid var(--line);background:rgba(79,140,255,.1);transition:background .2s,transform .2s}
+.chip:hover{background:rgba(155,107,255,.28);transform:translateY(-2px)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(155,107,255,.55)}
+.badge{align-self:flex-start;font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--grad);color:#fff}
+.badge.alt{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.card h3{font-size:1.25rem}
+.card p{color:var(--muted);font-size:.95rem}
+details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+summary{cursor:pointer;font-weight:600;font-size:.92rem;color:var(--blue);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:" +"}
+details[open] summary::after{content:" \2212"}
+details dl{margin-top:10px;font-size:.9rem}
+details dt{font-weight:600;margin-top:8px}
+details dd{color:var(--muted)}
+.links{display:flex;gap:14px;margin-top:auto;padding-top:8px;font-size:.9rem}
+.links a{color:var(--blue)}
+.links a:hover{text-decoration:underline}
+
+/* timeline */
+.tl{list-style:none;border-left:2px solid var(--line);margin-left:8px}
+.tl li{position:relative;padding:0 0 28px 28px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--grad)}
+.tl h3{font-size:1.1rem}
+.tl p{color:var(--muted);font-size:.93rem}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.cert{padding:16px}
+.cert .img{aspect-ratio:4/3;border-radius:10px;border:1px dashed var(--line);display:grid;place-items:center;color:var(--muted);font-size:.85rem;margin-bottom:12px;background:rgba(255,255,255,.03)}
+.cert img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.cert h3{font-size:1rem}
+.cert p{color:var(--muted);font-size:.88rem}
+
+/* resume + contact */
+.cta{padding:40px 24px;text-align:center}
+.cta h2{margin-bottom:18px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.contact a{padding:18px 20px;display:block;transition:border-color .2s}
+.contact a:hover{border-color:var(--blue)}
+.contact small{display:block;color:var(--muted)}
+footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+
+.thumb{width:100%;height:190px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line)}
+a.cert{display:block;transition:transform .25s,border-color .25s}
+a.cert:hover{transform:translateY(-4px);border-color:rgba(155,107,255,.55)}
+.cert .img{border-style:solid;overflow:hidden;background:#fff}
+.cert .img img{object-fit:contain;border-radius:0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.type{width:auto;border:0}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#home" class="logo">HARSHA MR</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#certifications">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <h1>Hi, I'm <span class="grad">Harsha MR</span></h1>
+    <p class="role">Computer Science &amp; Engineering student · Developer · AI/ML enthusiast</p>
+    <p class="tag"><span class="type">Code. Build. Innovate.</span></p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="resume.pdf" download>Download resume</a>
+      <!-- TODO: replace with your real profile links -->
+      <a class="btn" href="https://github.com/harsha-mr-14" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/harsha-mr-15520b38a" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm a Computer Science &amp; Engineering student at Malnad College of Engineering, Hassan, and I like turning real problems into working software.</p>
+        <p>My interests are software development, artificial intelligence and machine learning. I've taken part in hackathons including Smart India Hackathon, and my projects cover emergency communication, an AI-powered marketplace for artisans, and road safety.</p>
+      </div>
+      <div class="glass facts">
+        <div><b class="grad">9.44 / 10</b><span>Current CGPA</span></div>
+        <div><b class="grad">3</b><span>Hackathons and expos</span></div>
+        <div><b class="grad">4</b><span>Featured projects</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="lead">The languages and tools I use to build and ship projects.</p>
+    <div class="skills">
+      <div class="glass"><h3>Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span></div></div>
+      <div class="glass"><h3>Development</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Kotlin</span><span class="chip">Android Studio</span><span class="chip">Jetpack Compose</span></div></div>
+      <div class="glass"><h3>AI / ML</h3><div class="chips"><span class="chip">Machine Learning</span><span class="chip">Generative AI</span><span class="chip">AI concepts</span></div></div>
+      <div class="glass"><h3>Tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Firebase</span><span class="chip">MySQL</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Featured projects</h2>
+    <p class="lead">Open a project to see the problem, the solution and what it's built with.</p>
+    <div class="projects">
+
+      <article class="glass card">
+        <span class="badge alt">SIH26090 · Team Techno Verse</span>
+        <h3>Artisan AI</h3>
+        <p>AI-driven market linkage and smart cataloging for marginalized artisans.</p>
+        <details><summary>Details</summary><dl>
+          <dt>Problem</dt><dd>Artisans often struggle to catalog, describe and price their products for online buyers.</dd>
+          <dt>Solution</dt><dd>An AI-assisted platform that analyzes product images and generates descriptions and catalog information.</dd>
+          <dt>Features</dt><dd>AI price prediction (the artisan sets the final price), voice-based assistance for accessibility</dd>
+          <dt>Technologies</dt><dd>Generative AI <!-- TODO: add exact stack --></dd>
+        </dl></details>
+        <div class="links"><a href="#" target="_blank" rel="noopener">GitHub</a><a href="#" target="_blank" rel="noopener">Demo</a></div>
+      </article>
+
+      <article class="glass card">
+        <img class="thumb" src="images/project-phantom-rescue-mesh.jpg" alt="Phantom Rescue Mesh project poster with Android app and web dashboard screens" loading="lazy">
+        <span class="badge alt">Emergency communication</span>
+        <h3>Phantom Rescue Mesh</h3>
+        <p>A decentralized emergency system that keeps working when networks fail.</p>
+        <details><summary>Details</summary><dl>
+          <dt>Problem</dt><dd>Disasters and remote areas often have no mobile network when people need help most.</dd>
+          <dt>Solution</dt><dd>Victims send SOS alerts over Bluetooth mesh; rescuers receive them with location and message.</dd>
+          <dt>Features</dt><dd>One-tap SOS, live GPS sharing, offline communication, real-time rescuer notifications, rescuer web dashboard</dd>
+          <dt>Technologies</dt><dd>Android Studio, Kotlin, Bluetooth LE and Mesh, GPS, Firebase, OpenStreetMap, Leaflet, Material Design</dd>
+        </dl></details>
+        <div class="links"><a href="images/project-phantom-rescue-mesh.jpg" target="_blank" rel="noopener">Full poster</a><a href="#" target="_blank" rel="noopener">GitHub</a><a href="#" target="_blank" rel="noopener">Demo</a></div>
+      </article>
+
+      <article class="glass card">
+        <span class="badge">Winner · IGNITE: Idea to Proto 2.0</span>
+        <h3>AI Chat Bot</h3>
+        <p>A classroom assistant chatbot that helps students find timetables, classroom locations and other campus information. Winner of the project expo.</p>
+        <details><summary>Details</summary><dl>
+          <dt>Event</dt><dd>IGNITE: Idea to Proto 2.0, organised by ME-RIISE Foundation, 23 December 2025</dd>
+          <dt>Recognition</dt><dd>Winner</dd>
+          <dt>Problem</dt><dd>Students often have to ask around or check notice boards to find their timetable and where a class is held.</dd>
+          <dt>Solution</dt><dd>A chatbot that answers these questions instantly, covering timetables, classroom locations and more.</dd>
+          <dt>Technologies</dt><dd><!-- TODO: add your stack --></dd>
+        </dl></details>
+        <div class="links"><a href="#" target="_blank" rel="noopener">GitHub</a><a href="#" target="_blank" rel="noopener">Demo</a></div>
+      </article>
+
+      <article class="glass card">
+        <span class="badge alt">Innovation Design Thinking project</span>
+        <h3>Active Ghat Curve Warning System</h3>
+        <p>A proposed warning mechanism for blind curves and hairpin bends on ghat roads.</p>
+        <details><summary>Details</summary><dl>
+          <dt>Problem</dt><dd>Drivers can't see vehicles approaching around blind and hairpin curves in ghat sections.</dd>
+          <dt>Solution</dt><dd>An active warning that alerts approaching vehicles when another vehicle is present around the curve.</dd>
+          <dt>Technologies</dt><dd><!-- TODO: add sensors / hardware / software used --></dd>
+        </dl></details>
+        <div class="links"><a href="#" target="_blank" rel="noopener">GitHub</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="wrap">
+    <h2>Achievements</h2>
+    <p class="lead">Competitions and milestones so far.</p>
+    <ol class="tl">
+      <li><h3>Winner, IGNITE: Idea to Proto 2.0</h3><p>December 2025. First place for the AI Chat Bot at the project expo, ME-RIISE Foundation, Malnad College of Engineering.</p></li>
+      <li><h3>24-hour TECHNOTSAV Hackathon</h3><p>April 2026. Participant, organised by VVCE's CSE (AI &amp; ML) department with the IEEE Computational Intelligence Society.</p></li>
+      <li><h3>Smart India Hackathon 2026 (internal round)</h3><p>September 2026. Took part in INFUSION 5.0, the institution-level selection for SIH 2026, with Team Techno Verse (Artisan AI, SIH26090).</p></li>
+      <li><h3>9.44 CGPA</h3><p>B.E. Computer Science &amp; Engineering, Malnad College of Engineering, Hassan.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <p class="lead">Select a certificate to view it in full.</p>
+    <div class="certs">
+      <a class="glass cert" href="images/cert-ignite.jpg" target="_blank" rel="noopener"><div class="img"><img src="images/cert-ignite.jpg" alt="IGNITE: Idea to Proto 2.0 winner certificate" loading="lazy"></div><h3>Winner, IGNITE: Idea to Proto 2.0</h3><p>ME-RIISE Foundation · Dec 2025</p></a>
+      <a class="glass cert" href="images/cert-web-dev-github.jpg" target="_blank" rel="noopener"><div class="img"><img src="images/cert-web-dev-github.jpg" alt="Web Development and GitHub certificate" loading="lazy"></div><h3>Web Development &amp; GitHub</h3><p>IUCEE EWB-MCE · Oct–Dec 2025</p></a>
+      <a class="glass cert" href="images/cert-technotsav.jpg" target="_blank" rel="noopener"><div class="img"><img src="images/cert-technotsav.jpg" alt="TECHNOTSAV 24-hour hackathon participation certificate" loading="lazy"></div><h3>TECHNOTSAV 24-hour Hackathon</h3><p>VVCE with IEEE CIS · Apr 2026</p></a>
+      <a class="glass cert" href="images/cert-sih-infusion.jpg" target="_blank" rel="noopener"><div class="img"><img src="images/cert-sih-infusion.jpg" alt="INFUSION 5.0 Internal Smart India Hackathon participation certificate" loading="lazy"></div><h3>INFUSION 5.0, Internal SIH 2026</h3><p>ME-RIISE Foundation · Sep 2026</p></a>
+      <a class="glass cert" href="images/cert-claude-101.jpg" target="_blank" rel="noopener"><div class="img"><img src="images/cert-claude-101.jpg" alt="Claude 101 certificate of completion" loading="lazy"></div><h3>Claude 101</h3><p>Anthropic</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="wrap">
+    <div class="glass cta">
+      <h2>Want to know more about me?</h2>
+      <a class="btn primary" href="resume.pdf" download>Download my resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lead">Open to internships, collaborations and hackathon teams. Say hello.</p>
+    <div class="contact">
+      <a class="glass" href="mailto:harshagowdamr14@gmail.com"><small>Email</small>harshagowdamr14@gmail.com</a>
+      <a class="glass" href="tel:+919482589549"><small>Phone</small>+91 94825 89549</a>
+      <a class="glass" href="https://www.linkedin.com/in/harsha-mr-15520b38a" target="_blank" rel="noopener"><small>LinkedIn</small>Connect with me</a>
+      <a class="glass" href="https://github.com/harsha-mr-14" target="_blank" rel="noopener"><small>GitHub</small>See my code</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Harsha MR. Code. Build. Innovate.</footer>
+</body>
+</html>
